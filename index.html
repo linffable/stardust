@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>碎星 · Stardust</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="960" height="600"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div class="bar hp"><div class="fill" id="hpFill"></div><span id="hpText">100</span></div>
+      <div class="bar xp"><div class="fill" id="xpFill"></div></div>
+      <div class="meta"><span id="lvText">LV 1</span><span id="waveText">WAVE 1</span><span id="timeText">00:00</span></div>
+    </div>
+    <div class="hud-right">
+      <div class="score" id="scoreText">0</div>
+      <div class="combo" id="comboText">×1.0</div>
+      <div class="best" id="bestText">BEST 0</div>
+    </div>
+  </div>
+
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1 class="title">碎星</h1>
+      <div class="subtitle">S T A R D U S T</div>
+      <p class="blurb">自动开火的生存射击。<br>鼠标瞄准、走位、冲刺，在无限波次里活得再久一点。</p>
+      <div class="keys">
+        <span><b>W A S D</b> 移动</span>
+        <span><b>鼠标</b> 瞄准</span>
+        <span><b>空格</b> 冲刺</span>
+        <span><b>Tab</b> 自动瞄准</span>
+        <span><b>Esc</b> 暂停</span>
+        <span><b>M</b> 静音</span>
+      </div>
+      <button class="btn" id="startBtn">开 始</button>
+      <div class="bestline" id="menuBest">最高分 0</div>
+    </div>
+  </div>
+
+  <div id="levelup" class="overlay hidden">
+    <div class="levelbox">
+      <div class="eyebrow">LEVEL UP</div>
+      <div class="cards" id="cards"></div>
+      <div class="hint">点击，或按 1 / 2 / 3 选择</div>
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="panel small">
+      <h2>暂停</h2>
+      <p class="blurb">按 <b>Esc</b> 继续</p>
+    </div>
+  </div>
+
+  <div id="over" class="overlay hidden">
+    <div class="panel">
+      <div class="eyebrow">RUN ENDED</div>
+      <h2 id="overTitle">你被吞没了</h2>
+      <div class="stats">
+        <div><span id="overScore">0</span><small>得分</small></div>
+        <div><span id="overTime">00:00</span><small>存活</small></div>
+        <div><span id="overKills">0</span><small>击杀</small></div>
+      </div>
+      <div class="build" id="buildList"></div>
+      <div class="bestline" id="overBest"></div>
+      <button class="btn" id="againBtn">再来一次</button>
+    </div>
+  </div>
+</div>
+<script src="js/core.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

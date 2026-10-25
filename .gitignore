@@ -1,0 +1,11 @@
+# 构建产物与本地环境
+dist/
+build/
+bin/
+obj/
+*.exe
+*.pdb
+*.dll
+.vs/
+.idea/
+*.log
